@@ -348,3 +348,18 @@ def main():
 
 if __name__ == "__main__":
     main()
+"""Model training utilities."""
+
+from sklearn.ensemble import GradientBoostingClassifier
+
+def train_model(X_train, y_train):
+    """Train a machine learning model."""
+    # Use Gradient Boosting with specific parameters
+    model = GradientBoostingClassifier(
+        n_estimators=100,
+        max_depth=5,
+        learning_rate=0.1,
+        random_state=42
+    )
+    model.fit(X_train, y_train)
+    return model
